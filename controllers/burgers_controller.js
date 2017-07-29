@@ -2,8 +2,6 @@ var express = require("express");
 var router = express.Router();
 var burger = require("../models/burger.js");
 
-// CODE GOES HERE
-
 router.get("/", function(req, res){
 	burger.selectAll(function(data){
 		var hbsObject = {
@@ -15,18 +13,22 @@ router.get("/", function(req, res){
 });
 
 router.post("/", function(req, res){
+	console.log(req.body);
 	burger.insertOne([
-		"burger_name", "devoured"]
+		"burger_name", "devoured"],
+		req.body.name, function(){
+			res.redirect("/");
+		}
 	);
 });
 
-router.put("/", function(req, res){
+router.put("/:id", function(req, res){
 	var condition = "id = " + req.params.id;
 
 	console.log("condition", condition);
 
 	burger.updateOne({
-		burger_name: req.body.burger_name
+		devoured: true
 	}, condition, function(){
 		res.redirect("/");
 	});
