@@ -1,6 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="page-header">
+		<img src="public/assets/img/burger.png" alt="Yum." style="align-content: center;">
 			<h1 style="text-align: center;">E A T</h1>
 		</div>
 	</div>
@@ -13,7 +14,7 @@
 					{{#unless this.devoured}}
 						<li>
 							{{this.burger_name}}
-
+							<br>
 							<form action="/{{this.id}}?_method=PUT" method="POST">
 								<input type="hidden" name="devoured" value="true">
 								<button type="submit">EAT IT.</button>
@@ -31,6 +32,7 @@
 					{{#if this.devoured}}
 						<li>
 							{{this.burger_name}}
+							<br>
 						</li>
 					{{/if}}
 				{{/each}}
