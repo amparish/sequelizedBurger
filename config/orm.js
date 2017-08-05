@@ -1,4 +1,4 @@
-// Import MySQL connection.
+/*// Import MySQL connection.
 var connection = require("../config/connection.js");
 
 // Helper function for SQL syntax.
@@ -79,4 +79,4 @@ var orm = {
 }
 
 // Exports ORM
-module.exports = orm;
+module.exports = orm;*/
