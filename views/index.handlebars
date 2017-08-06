@@ -1,14 +1,13 @@
 <div class="container">
 	<div class="row">
-		<div class="page-header">
-		<img src="" alt="Yum." style="align-content: center;">
+			<img src="assets/img/burger.png" alt="Yum." id="burger_img">
 			<h1 style="text-align: center;">Burgers</h1>
-		</div>
 	</div>
-	
+	<hr>
 	<div class="row">
 		<div class="col-md-6" style="text-align: center;">
-			<h2>The Menu</h2>
+			<h2 class="animated slideInLeft">The Menu</h2>
+			<hr>
 			<ul style="list-style: none;">
 				{{#each burgers}}
 					{{#unless this.devoured}}
@@ -26,13 +25,13 @@
 		</div>
 		
 		<div class="col-md-6" style="text-align: center;">
-			<h2>You ate it!</h2>
+			<h2 class="animated slideInRight">You ate it!</h2>
+			<hr>
 			<ul style="list-style: none;">
 				{{#each burgers}}
 					{{#if this.devoured}}
 						<li>
 							{{burger_name}}
-							<br>
 						</li>
 					{{/if}}
 				{{/each}}
